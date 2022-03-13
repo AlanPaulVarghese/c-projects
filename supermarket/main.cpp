@@ -1,31 +1,15 @@
 #include <iostream>
 #include<fstream>
+#include<Shop.h>
 using namespace std;
-
-class Shop{
-
-    int pcode;
-    float price;
-    float discount;
-    string pname;
-public:
-    void showMenu();
-    void admin();
-    void buyer();
-    void add();
-    void edit();
-    void rem();
-    void listItems();
-    void recipt();
-
-};
-
 
 
 
 
 int main()
 {
+   Shop shop;
+   shop.showMenu();
     cout << "Hello world!" << endl;
     return 0;
 }
