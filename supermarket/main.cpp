@@ -8,8 +8,7 @@ using namespace std;
 
 int main()
 {
-   Shop shop;
-   shop.showMenu();
-    cout << "Hello world!" << endl;
+    Shop shop;
+    shop.showMenu();
     return 0;
 }

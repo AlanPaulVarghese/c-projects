@@ -7,7 +7,9 @@ class User
 {
     string user_name;
     string password;
+    public:
     User(string user_name,string password);
+    bool verifyUser();
 };
 
 #endif // USER_H
