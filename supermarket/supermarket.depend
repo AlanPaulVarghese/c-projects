@@ -8,12 +8,14 @@
 	<Product.h>
 	<vector>
 
-1647187601 source:c:\users\alan\desktop\projects\c++ projects\supermarketbilling\supermarket\src\shop.cpp
+1647192332 source:c:\users\alan\desktop\projects\c++ projects\supermarketbilling\supermarket\src\shop.cpp
 	"Shop.h"
 	<iostream>
 	<User.h>
 	<bits/stdc++.h>
 	<ctype.h>
+	<fstream>
+	<Product.h>
 
 1647187585 source:c:\users\alan\desktop\projects\c++ projects\supermarketbilling\supermarket\src\user.cpp
 	"User.h"
@@ -21,6 +23,9 @@
 1647189266 c:\users\alan\desktop\projects\c++ projects\supermarketbilling\supermarket\include\user.h
 	<iostream>
 
-1647189279 c:\users\alan\desktop\projects\c++ projects\supermarketbilling\supermarket\include\product.h
+1647189419 c:\users\alan\desktop\projects\c++ projects\supermarketbilling\supermarket\include\product.h
 	<iostream>
+
+1647189243 source:c:\users\alan\desktop\projects\c++ projects\supermarketbilling\supermarket\src\product.cpp
+	"Product.h"
 

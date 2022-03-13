@@ -5,6 +5,7 @@
 using namespace std;
 class Product
 {
+    public:
     int pcode;
     float price;
     float discount;

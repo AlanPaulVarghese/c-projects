@@ -4,7 +4,7 @@
 #include<bits/stdc++.h>
 #include<ctype.h>
 #include<fstream>
-
+#include<Product.h>
 using namespace std;
 User user("admin","admin");
 void Shop::showMenu()
@@ -23,6 +23,7 @@ void Shop::showMenu()
             if(status){
                 cout<<"Logged In";
                 admin();
+                return;
             }
             else{
                 cout<<"invalid credentials";
@@ -53,37 +54,82 @@ void Shop::admin(){
     cout<<"Enter Your Choice"<<endl;
     do{
 
-        cout<<"Add Product"<<endl<<"Modify Product"<<endl<<"Delete Product"<<endl<<"Change User Name and Password"<<endl<<"Back To Main Screen"<<endl;
+
+        cout<<"Add Product"<<endl<<"Modify Product"<<endl<<"Delete Product"<<endl<<"List Products"<<endl<<"Change User Name and Password"<<endl<<"Back To Main Screen"<<endl;
         cout<<":-";
         cin.ignore();
         getline(cin,choice);
         transform(choice.begin(),choice.end(),choice.begin(),::tolower);
         if(choice=="add product"){
-            //add();
-            break;
+            add();
+            return;
         }
         else if(choice=="modify product"){
             //edit();
-            break;
+            return;
         }
         else if(choice=="delete product"){
             //rem();
-            break;
+            return ;
         }
         else if(choice=="change user name and password"){
             user.changeCredentials();
             system ("CLS");
             showMenu();
-            break;
+            return;
         }
         else if(choice=="back to main screen"){
             system ("CLS");
             showMenu();
-            break;
+            return;
+        }
+        else if(choice=="list products"){
+            listItems();
+            getchar();
+            system ("CLS");
+
         }
         else{
             cout<<"Invaild Selection Please try again"<<endl;
+            getchar();
+            system ("CLS");
+            cout<<"\t\t\t\t\t\t\t\tWELCOME TO MY Admin Panel"<<endl;
+            cout<<"Enter Your Choice"<<endl;
         }
 
     }while(true);
+}
+void Shop::add(){
+do{
+    string choice;
+    Product p;
+    cout<<"Enter Product Name:";
+    cin>>p.pname;
+    cout<<"Enter Product Code:";
+    cin>>p.pcode;
+    cout<<"Enter price:";
+    cin>>p.price;
+    cout<<"Enter discount:";
+    cin>>p.discount;
+    this->products.push_back(p);
+    cout<<"Do You Want To Add New Product:";
+    cin>>choice;
+    transform(choice.begin(),choice.end(),choice.begin(),::tolower);
+    if(choice!="yes"){
+        admin();
+        return;
+    }
+}while(true);
+}
+
+
+void Shop::listItems(){
+int products_size=this->products.size();
+if(products_size==0){
+    cout<<"No Products To display!";
+    return;
+}
+for(int i=0;i<products_size;i++){
+    cout<<this->products[i].pname;
+}
 }
