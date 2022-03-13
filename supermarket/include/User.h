@@ -1,6 +1,5 @@
 #ifndef USER_H
 #define USER_H
-
 #include<iostream>
 using namespace std;
 class User
@@ -10,6 +9,7 @@ class User
     public:
     User(string user_name,string password);
     bool verifyUser();
+    void changeCredentials();
 };
 
 #endif // USER_H

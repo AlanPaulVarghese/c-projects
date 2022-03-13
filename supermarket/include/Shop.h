@@ -1,13 +1,13 @@
 #ifndef SHOP_H
 #define SHOP_H
 #include<iostream>
+#include<Product.h>
+#include<vector>
 using namespace std;
 class Shop{
 
-    int pcode;
-    float price;
-    float discount;
-    string pname;
+vector<Product> products;
+
 public:
     void showMenu();
     void admin();

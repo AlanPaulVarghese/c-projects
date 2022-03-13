@@ -20,3 +20,16 @@ bool User::verifyUser(){
         return false;
     }
 }
+
+void User::changeCredentials(){
+
+    string user_name;
+    string password;
+    cout<<"Enter Your New User Name:";
+    cin>>user_name;
+    cout<<"Enter Your New Password:";
+    cin>>password;
+    this->password=password;
+    this->user_name=user_name;
+    return;
+}
