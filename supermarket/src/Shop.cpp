@@ -53,11 +53,9 @@ void Shop::admin(){
     cout<<"\t\t\t\t\t\t\t\tWELCOME TO MY Admin Panel"<<endl;
     cout<<"Enter Your Choice"<<endl;
     do{
-
-
         cout<<"Add Product"<<endl<<"Modify Product"<<endl<<"Delete Product"<<endl<<"List Products"<<endl<<"Change User Name and Password"<<endl<<"Back To Main Screen"<<endl;
         cout<<":-";
-        cin.ignore();
+        //cin.ignore();
         getline(cin,choice);
         transform(choice.begin(),choice.end(),choice.begin(),::tolower);
         if(choice=="add product"){
@@ -87,9 +85,12 @@ void Shop::admin(){
             listItems();
             getchar();
             system ("CLS");
+            cout<<"\t\t\t\t\t\t\t\tWELCOME TO MY Admin Panel"<<endl;
+            cout<<"Enter Your Choice"<<endl;
 
         }
         else{
+             cout<<choice<<endl;
             cout<<"Invaild Selection Please try again"<<endl;
             getchar();
             system ("CLS");
