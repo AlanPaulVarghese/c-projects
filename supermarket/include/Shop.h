@@ -7,8 +7,9 @@ using namespace std;
 class Shop{
 
 vector<Product> products;
-
+int product_id_gen;
 public:
+    Shop();
     void showMenu();
     void admin();
     void buyer();
@@ -17,6 +18,7 @@ public:
     void rem();
     void listItems();
     void recipt();
+    int getPCode();
 
 };
 

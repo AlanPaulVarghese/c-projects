@@ -8,6 +8,18 @@
 #include<iomanip>//for tables;
 using namespace std;
 User user("admin","admin");
+
+Shop::Shop(){
+this->product_id_gen=0;
+
+}
+
+int Shop::getPCode(){
+this->product_id_gen++;
+return this->product_id_gen;
+
+}
+
 void Shop::showMenu()
 {
     int choice;
@@ -110,12 +122,13 @@ do{
     Product p;
     cout<<"Enter Product Name:";
     cin>>p.pname;
-    cout<<"Enter Product Code:";
-    cin>>p.pcode;
+    //cout<<"Enter Product Code:";
+    //cin>>p.pcode;
     cout<<"Enter price:";
     cin>>p.price;
     cout<<"Enter discount:";
     cin>>p.discount;
+    p.pcode=this->getPCode();
     this->products.push_back(p);
     cout<<"Do You Want To Add New Product:";
     cin>>choice;
@@ -134,10 +147,8 @@ if(products_size==0){
     cout<<"No Products To display!";
     return;
 }
-//cout<<"Product_Name"<<"          "<<"Product_code"<<"           "<<"Price"<<endl;
  cout<<left<<setw(10)<< "Name"<<setw(5)<< "Id"<< setw(8)<< "Price"<<setw(8)<<"Discount"<< endl;
 for(int i=0;i<products_size;i++){
-   // cout<<this->products[i].pname<<"                   "<<products[i].pcode<<"                      "<<products[i].price<<endl;
     cout<<setw(10)<<products[i].pname<< setw(5)<<products[i].pcode<<setw(8)<<products[i].price<<setw(8)<<products[i].discount<< endl;
 }
 }
