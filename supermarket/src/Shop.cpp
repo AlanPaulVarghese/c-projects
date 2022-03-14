@@ -5,6 +5,7 @@
 #include<ctype.h>
 #include<fstream>
 #include<Product.h>
+#include<iomanip>//for tables;
 using namespace std;
 User user("admin","admin");
 void Shop::showMenu()
@@ -133,7 +134,10 @@ if(products_size==0){
     cout<<"No Products To display!";
     return;
 }
+//cout<<"Product_Name"<<"          "<<"Product_code"<<"           "<<"Price"<<endl;
+ cout<<left<<setw(10)<< "Name"<<setw(5)<< "Id"<< setw(8)<< "Price"<<setw(8)<<"Discount"<< endl;
 for(int i=0;i<products_size;i++){
-    cout<<this->products[i].pname;
+   // cout<<this->products[i].pname<<"                   "<<products[i].pcode<<"                      "<<products[i].price<<endl;
+    cout<<setw(10)<<products[i].pname<< setw(5)<<products[i].pcode<<setw(8)<<products[i].price<<setw(8)<<products[i].discount<< endl;
 }
 }
