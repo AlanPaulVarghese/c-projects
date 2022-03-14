@@ -9,16 +9,16 @@ using namespace std;
 User user("admin","admin");
 void Shop::showMenu()
 {
-    string choice;
+    int choice;
     cout<<"\t\t\t\t\t\t\t\tWELCOME TO MY SHOP"<<endl;
     cout<<"Enter Your Choice"<<endl;
     do{
-        cout<<"Admin"<<endl<<"Buyer"<<endl<<"Exit"<<endl;
+        cout<<"1-Admin"<<endl<<"2-Buyer"<<endl<<"3-Exit"<<endl;
         cout<<":-";
         cin>>choice;
-        transform(choice.begin(),choice.end(),choice.begin(),::tolower);
+        //transform(choice.begin(),choice.end(),choice.begin(),::tolower);
 
-        if(choice=="admin"){
+        if(choice==1){
             bool status=user.verifyUser();
             if(status){
                 cout<<"Logged In";
@@ -31,15 +31,16 @@ void Shop::showMenu()
             break;
 
         }
-        else if(choice=="buyer"){
+        else if(choice==2){
             cout<<"you Seleted Buyer";
             break;
         }
-        else if(choice=="exit"){
+        else if(choice==3){
             exit(0);
         }
         else{
             cout<<"Invaild Selection Please try again"<<endl;
+            getchar();
         }
 
        }
@@ -49,40 +50,42 @@ void Shop::showMenu()
 
 void Shop::admin(){
     system ("CLS");
-    string choice;
     cout<<"\t\t\t\t\t\t\t\tWELCOME TO MY Admin Panel"<<endl;
     cout<<"Enter Your Choice"<<endl;
     do{
-        cout<<"Add Product"<<endl<<"Modify Product"<<endl<<"Delete Product"<<endl<<"List Products"<<endl<<"Change User Name and Password"<<endl<<"Back To Main Screen"<<endl;
+        int choice;
+        cout<<"1-Add Product"<<endl<<"2-Modify Product"<<endl<<"3-Delete Product"<<endl<<"4-List Products"<<endl<<"5-Change User Name and Password"<<endl<<"6-Back To Main Screen"<<endl;
         cout<<":-";
+        cin>>choice;
         //cin.ignore();
-        getline(cin,choice);
-        transform(choice.begin(),choice.end(),choice.begin(),::tolower);
-        if(choice=="add product"){
+        //getline(cin,choice);
+        //transform(choice.begin(),choice.end(),choice.begin(),::tolower);
+        if(choice==1){
             add();
             return;
         }
-        else if(choice=="modify product"){
+        else if(choice==2){
             //edit();
             return;
         }
-        else if(choice=="delete product"){
+        else if(choice==3){
             //rem();
             return ;
         }
-        else if(choice=="change user name and password"){
+        else if(choice==5){
             user.changeCredentials();
             system ("CLS");
             showMenu();
             return;
         }
-        else if(choice=="back to main screen"){
+        else if(choice==6){
             system ("CLS");
             showMenu();
             return;
         }
-        else if(choice=="list products"){
+        else if(choice==4){
             listItems();
+            cin.ignore();
             getchar();
             system ("CLS");
             cout<<"\t\t\t\t\t\t\t\tWELCOME TO MY Admin Panel"<<endl;
@@ -90,7 +93,7 @@ void Shop::admin(){
 
         }
         else{
-             cout<<choice<<endl;
+            cout<<choice<<endl;
             cout<<"Invaild Selection Please try again"<<endl;
             getchar();
             system ("CLS");
