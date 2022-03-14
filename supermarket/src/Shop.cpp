@@ -78,7 +78,8 @@ void Shop::admin(){
             return;
         }
         else if(choice==2){
-            //edit();
+            //system ("CLS");
+            edit();
             return;
         }
         else if(choice==3){
@@ -140,9 +141,12 @@ do{
 }while(true);
 }
 
+int Shop::getProductSize(){
+return this->products.size();
+}
 
 void Shop::listItems(){
-int products_size=this->products.size();
+int products_size=this->getProductSize();
 if(products_size==0){
     cout<<"No Products To display!";
     return;
@@ -151,4 +155,43 @@ if(products_size==0){
 for(int i=0;i<products_size;i++){
     cout<<setw(10)<<products[i].pname<< setw(5)<<products[i].pcode<<setw(8)<<products[i].price<<setw(8)<<products[i].discount<< endl;
 }
+}
+
+int Shop::getProduct(int pid){
+int products_size=this->getProductSize();
+for(int i=0;i<products_size;i++){
+    if(pid==products[i].pcode){
+        return i;
+    }
+}
+return -1;
+}
+
+void Shop::edit(){
+int pid;
+do{
+    int ch=-1;
+    system ("CLS");
+    cout<<"Enter the Pcode of Product to Modify:";
+    cin>>pid;
+
+    if(this->getProduct(pid)!=-1){
+        cout<<"product found:";
+        return;
+    }
+
+    else{
+        cout<<"No Product With This PCode Please Try Again Later Or Press 1 To Go To Main Screen or Any Other Number To Try Again!:";
+        cin>>ch;
+        if(ch==1){
+            system ("CLS");
+            showMenu();
+
+            return;
+        }
+        //cin.ignore();
+        //getchar();
+
+    }
+   }while(true);
 }

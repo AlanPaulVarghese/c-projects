@@ -19,6 +19,8 @@ public:
     void listItems();
     void recipt();
     int getPCode();
+    int getProduct(int pid);
+    int getProductSize();
 
 };
 
