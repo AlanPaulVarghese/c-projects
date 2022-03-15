@@ -7,7 +7,7 @@
 #include<Product.h>
 #include<iomanip>//for tables;
 using namespace std;
-User user("admin","admin");
+/*
 
 Shop::Shop(){
 this->product_id_gen=0;
@@ -40,6 +40,7 @@ void Shop::showMenu()
             }
             else{
                 cout<<"invalid credentials";
+                exit(0);
             }
             break;
 
@@ -70,15 +71,12 @@ void Shop::admin(){
         cout<<"1-Add Product"<<endl<<"2-Modify Product"<<endl<<"3-Delete Product"<<endl<<"4-List Products"<<endl<<"5-Change User Name and Password"<<endl<<"6-Back To Main Screen"<<endl;
         cout<<":-";
         cin>>choice;
-        //cin.ignore();
-        //getline(cin,choice);
-        //transform(choice.begin(),choice.end(),choice.begin(),::tolower);
         if(choice==1){
             add();
             return;
         }
         else if(choice==2){
-            //system ("CLS");
+            system ("CLS");
             edit();
             return;
         }
@@ -174,10 +172,32 @@ do{
     system ("CLS");
     cout<<"Enter the Pcode of Product to Modify:";
     cin>>pid;
+    int index=this->getProduct(pid);
+    if(index!=-1){
+        cout<<"1-Edit Product Name"<<endl<<"2-Edit Product Price"<<endl<<"3-Edit Product Discount"<<endl<<"4-Go To Admin Pannel"<<endl;
+        cout<<":-";
+        cin>>ch;
+        if(ch==1){
+            string temp;
+            cout<<"Enter New Name:";
+            cin>>temp;
+            products[index].pname=temp;
+        }
+        else if(ch==2){
+            int temp;
+            cout<<"Enter New Price:";
+            cin>>temp;
+            products[index].price=temp;
+        }
+        else{
+            int temp;
+            cout<<"Enter New Discount:";
+            cin>>temp;
+            products[index].discount=temp;
+        }
+         system ("CLS");
+         showMenu();
 
-    if(this->getProduct(pid)!=-1){
-        cout<<"product found:";
-        return;
     }
 
     else{
@@ -195,3 +215,5 @@ do{
     }
    }while(true);
 }
+
+*/

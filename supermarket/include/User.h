@@ -1,15 +1,20 @@
 #ifndef USER_H
 #define USER_H
 #include<iostream>
+#include<Product.h>
+#include<vector>
+#include<Authentication.h>
 using namespace std;
+
 class User
 {
-    string user_name;
-    string password;
-    public:
+    vector<Product> cartProducts;
+    vector<Product> oderProducts;
+    Authentication authentication;
+public:
     User(string user_name,string password);
-    bool verifyUser();
-    void changeCredentials();
+    Authentication auth();
+
 };
 
 #endif // USER_H

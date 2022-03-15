@@ -1,14 +1,16 @@
 # depslib dependency file v1.0
-1647237573 source:c:\users\alan\desktop\projects\c++ projects\supermarketbilling\supermarket\main.cpp
+1647321050 source:c:\users\alan\desktop\projects\c++ projects\supermarketbilling\supermarket\main.cpp
 	<iostream>
 	<Shop.h>
+	<User.h>
+	<Authentication.h>
 
-1647237968 c:\users\alan\desktop\projects\c++ projects\supermarketbilling\supermarket\include\shop.h
+1647320051 c:\users\alan\desktop\projects\c++ projects\supermarketbilling\supermarket\include\shop.h
 	<iostream>
 	<Product.h>
 	<vector>
 
-1647238193 source:c:\users\alan\desktop\projects\c++ projects\supermarketbilling\supermarket\src\shop.cpp
+1647320141 source:c:\users\alan\desktop\projects\c++ projects\supermarketbilling\supermarket\src\shop.cpp
 	"Shop.h"
 	<iostream>
 	<User.h>
@@ -18,15 +20,24 @@
 	<Product.h>
 	<iomanip>
 
-1647187585 source:c:\users\alan\desktop\projects\c++ projects\supermarketbilling\supermarket\src\user.cpp
+1647321879 source:c:\users\alan\desktop\projects\c++ projects\supermarketbilling\supermarket\src\user.cpp
 	"User.h"
 
-1647189266 c:\users\alan\desktop\projects\c++ projects\supermarketbilling\supermarket\include\user.h
+1647321832 c:\users\alan\desktop\projects\c++ projects\supermarketbilling\supermarket\include\user.h
 	<iostream>
+	<Product.h>
+	<vector>
+	<Authentication.h>
 
 1647189419 c:\users\alan\desktop\projects\c++ projects\supermarketbilling\supermarket\include\product.h
 	<iostream>
 
 1647189243 source:c:\users\alan\desktop\projects\c++ projects\supermarketbilling\supermarket\src\product.cpp
 	"Product.h"
+
+1647321676 source:c:\users\alan\desktop\projects\c++ projects\supermarketbilling\supermarket\src\authentication.cpp
+	"Authentication.h"
+
+1647321611 c:\users\alan\desktop\projects\c++ projects\supermarketbilling\supermarket\include\authentication.h
+	<iostream>
 
