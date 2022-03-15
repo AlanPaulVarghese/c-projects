@@ -4,6 +4,8 @@
 #include<Product.h>
 #include<vector>
 #include<Authentication.h>
+#include<Shop.h>
+#include<bits/stdc++.h>
 using namespace std;
 
 class User
@@ -14,6 +16,7 @@ class User
 public:
     User(string user_name,string password);
     Authentication auth();
+    void buyProduct();
 
 };
 

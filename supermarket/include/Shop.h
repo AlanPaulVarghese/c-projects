@@ -19,13 +19,14 @@ public:
     void addProduct(Product p);
     void editProduct(int index,int ch,string change);
     void removeProduct(int index);
+    Product getProduct(int index);
     //void add();
     //void edit();
     //void rem();
      void listItems();
     //void recipt();
      int getPCode();
-     int getProduct(int pid);
+     int getProductId(int pid);
      int getProductSize();
 
 };

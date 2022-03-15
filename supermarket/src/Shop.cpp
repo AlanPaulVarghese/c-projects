@@ -9,6 +9,8 @@
 #include<Admin.h>
 using namespace std;
 
+Admin admin("admin","admin");
+User user("user","user");
 
 Shop::Shop(){
 this->product_id_gen=0;
@@ -69,7 +71,7 @@ return;
 
 void Shop::showAdminMenu(){
 
-Admin admin("admin","admin");
+
 
 if(admin.auth().verifyUser()){
     int choice;
@@ -92,12 +94,15 @@ if(admin.auth().verifyUser()){
                break;
          case 3:
             admin.rem();
+            break;
          case 4:
                 listItems();
                 cin.ignore();
                 getchar();
                 break;
                 //goto gotolabel;
+         //case 5:
+               //admin.credentials();
          case 5:
                 return;
          default:
@@ -106,7 +111,7 @@ if(admin.auth().verifyUser()){
              getchar();
              choice=-1;
         }
-    }while(choice<5);
+    }while(choice<6);
 }
 else{
     cout<<"no Welcomed";
@@ -120,10 +125,23 @@ getchar();
 
 void Shop::showUserMenu(){
 
-User user("user","user");
-
 if(user.auth().verifyUser()){
-    cout<<"Welcome";
+int ch;
+    do{
+        system ("CLS");
+        cout<<"\t\t\t\t\t\t\t\tWelcome TO User Panel"<<endl;
+        cout<<"Enter Your Choice"<<endl;
+        cout<<"1-Buy Product"<<endl<<"2-See Cart"<<endl<<"3-See Orders"<<endl<<"4-Back To Main Main"<<endl;
+        cin>>ch;
+        switch(ch){
+
+    case 1:
+            user.buyProduct();
+            break;
+
+
+        }
+    }while(false);
 }
 else{
     cout<<"no Welcomed";
@@ -154,7 +172,7 @@ this->product_id_gen++;
 return this->product_id_gen;
 }
 
-int Shop::getProduct(int pid){
+int Shop::getProductId(int pid){
 int products_size=this->getProductSize();
 for(int i=0;i<products_size;i++){
     if(pid==products[i].pcode){
@@ -193,6 +211,12 @@ return;
 
 }
 
+
+Product Shop::getProduct(int index){
+
+return this->products[index];
+
+}
 
 /*
 

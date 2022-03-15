@@ -34,9 +34,13 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Admin.h" />
+		<Unit filename="include/Authentication.h" />
 		<Unit filename="include/Shop.h" />
 		<Unit filename="include/User.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Admin.cpp" />
+		<Unit filename="src/Authentication.cpp" />
 		<Unit filename="src/Shop.cpp" />
 		<Unit filename="src/User.cpp" />
 		<Extensions>

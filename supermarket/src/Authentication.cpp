@@ -39,7 +39,7 @@ void Authentication::changeCredentials(){
     cin>>user_name;
     cout<<"Enter Your New Password:";
     cin>>password;
-    this->password=password;
     this->user_name=user_name;
+    this->password=password;
     return;
 }

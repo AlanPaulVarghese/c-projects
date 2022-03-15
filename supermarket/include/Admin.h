@@ -13,6 +13,7 @@ public:
     void add();
     void edit();
     void rem();
+    void credentials();
 };
 
 #endif // ADMIN_H

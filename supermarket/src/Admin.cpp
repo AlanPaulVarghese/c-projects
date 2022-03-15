@@ -42,7 +42,7 @@ do{
     int pid;
     cout<<"Enter Product Code:";
     cin>>pid;
-    int index=s->getProduct(pid);
+    int index=s->getProductId(pid);
     if(index!=-1){
         int ch;
         cout<<"Product Found:"<<endl;
@@ -92,7 +92,7 @@ do{
     int pid;
     cout<<"Enter Product Code To Remove:"<<endl;
     cin>>pid;
-    int index=s->getProduct(pid);
+    int index=s->getProductId(pid);
     if(index!=-1){
       s->removeProduct(index);
       cout<<"Product Removed!"<<endl;
@@ -110,6 +110,11 @@ do{
 
 }while(true);
 
+}
 
 
+
+void Admin::credentials(){
+this->auth().changeCredentials();
+return;
 }
