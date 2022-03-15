@@ -141,9 +141,18 @@ int ch;
     case 2:
              user.cart();
              break;
-
+    case 3:
+             user.oders();
+             break;
+    case 4:
+             return;
+    default:
+             cout<<"Invaild Selection Please try again"<<endl;
+             cin.ignore();
+             getchar();
+             ch=-1;
         }
-    }while(false);
+    }while(ch<4);
 }
 else{
     cout<<"no Welcomed";

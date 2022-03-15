@@ -13,6 +13,7 @@ return this->authentication;
 
 void User::buyProduct(){
             do{
+                system("CLS");
                 int pid;
             if(s->getProductSize()==0){
                 cout<<"No Products To Display!";
@@ -52,6 +53,8 @@ void User::cart(){
 int cart_size=this->getCartSize();
 if(cart_size==0){
     cout<<"No Products To display!";
+    cin.ignore();
+    getchar();
     return;
 }
  cout<<left<<setw(10)<< "Name"<<setw(5)<< "Id"<< setw(8)<< "Price"<<setw(8)<<"Discount"<< endl;
@@ -80,4 +83,30 @@ default:
 }
 
 return;
+}
+
+
+int User::getOderProductsSize(){
+
+return this->oderProducts.size();
+}
+
+void User::oders(){
+
+int oder_size=getOderProductsSize();
+
+if(oder_size==0){
+    cout<<"No Products To display!";
+    cin.ignore();
+    getchar();
+    return;
+}
+
+cout<<left<<setw(10)<< "Name"<<setw(5)<< "Id"<< setw(8)<< "Price"<<setw(8)<<"Discount"<< endl;
+for(int i=0;i<oder_size;i++){
+    cout<<setw(10)<<this->oderProducts[i].pname<< setw(5)<<this->oderProducts[i].pcode<<setw(8)<<this->oderProducts[i].price<<setw(8)<<this->oderProducts[i].discount<< endl;
+}
+
+cin.ignore();
+getchar();
 }

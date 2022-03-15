@@ -19,6 +19,8 @@ public:
     void buyProduct();
     void cart();
     int getCartSize();
+    void oders();
+    int getOderProductsSize();
 
 };
 
