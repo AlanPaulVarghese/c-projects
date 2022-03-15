@@ -24,7 +24,7 @@ void User::buyProduct(){
             cin>>pid;
             int index=s->getProductId(pid);
             if(index==-1){
-                cout<<"There Is No Product With This Id!:";
+                cout<<"There Is No Product With This Id!:"<<endl;
             }else{
 
               this->cartProducts.push_back(s->getProduct(index));
@@ -32,7 +32,7 @@ void User::buyProduct(){
 
             }
             string choice;
-            cout<<"Would You Like To Buy Another Product";
+            cout<<"Would You Like To Buy Another Product:";
             cin>>choice;
             transform(choice.begin(),choice.end(),choice.begin(),::tolower);
             if(choice!="yes"){
@@ -41,6 +41,43 @@ void User::buyProduct(){
             }while(true);
 
 
+}
 
+int User::getCartSize(){
+return this->cartProducts.size();
 
+}
+
+void User::cart(){
+int cart_size=this->getCartSize();
+if(cart_size==0){
+    cout<<"No Products To display!";
+    return;
+}
+ cout<<left<<setw(10)<< "Name"<<setw(5)<< "Id"<< setw(8)<< "Price"<<setw(8)<<"Discount"<< endl;
+for(int i=0;i<cart_size;i++){
+    cout<<setw(10)<<this->cartProducts[i].pname<< setw(5)<<this->cartProducts[i].pcode<<setw(8)<<this->cartProducts[i].price<<setw(8)<<this->cartProducts[i].discount<< endl;
+}
+
+cout<<endl;
+
+int ch;
+cout<<"Press 1 To Order, 2-Do Nothing Or Press Any Other Number To Discard Products:";
+cin>>ch;
+switch(ch){
+
+case 1:
+       for(int i=0;i<cart_size;i++){
+        this->oderProducts.push_back(this->cartProducts[i]);
+       }
+
+       cartProducts.clear();
+       break;
+case 2:
+       return;
+default:
+       cartProducts.clear();
+}
+
+return;
 }

@@ -138,7 +138,9 @@ int ch;
     case 1:
             user.buyProduct();
             break;
-
+    case 2:
+             user.cart();
+             break;
 
         }
     }while(false);

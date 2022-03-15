@@ -17,6 +17,8 @@ public:
     User(string user_name,string password);
     Authentication auth();
     void buyProduct();
+    void cart();
+    int getCartSize();
 
 };
 
