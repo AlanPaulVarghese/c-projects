@@ -87,6 +87,9 @@ if(admin.auth().verifyUser()){
                 admin.add();
                 //goto gotolabel;
                 break;
+         case 2:
+               admin.edit();
+               break;
          case 4:
                 listItems();
                 cin.ignore();
@@ -149,6 +152,16 @@ this->product_id_gen++;
 return this->product_id_gen;
 }
 
+int Shop::getProduct(int pid){
+int products_size=this->getProductSize();
+for(int i=0;i<products_size;i++){
+    if(pid==products[i].pcode){
+        return i;
+    }
+}
+return -1;
+
+}
 
 /*
 

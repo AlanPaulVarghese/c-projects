@@ -33,3 +33,13 @@ void Admin::add(){
     }
 }while(true);
 }
+
+
+void Admin::edit(){
+
+do{
+    system("CLS");
+}while(false);
+
+
+}
