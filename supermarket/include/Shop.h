@@ -17,7 +17,7 @@ public:
     void showAdminMenu();
     void showUserMenu();
     void addProduct(Product p);
-
+    void editProduct(int index,int ch,string change);
     //void add();
     //void edit();
     //void rem();

@@ -163,6 +163,27 @@ return -1;
 
 }
 
+void Shop::editProduct(int index,int ch,string change){
+
+if(ch==1){
+
+    this->products[index].pname=change;
+    return;
+}
+
+if(ch==2){
+    this->products[index].price=stoi(change);
+    return;
+}
+
+if(ch==3){
+    this->products[index].discount=stoi(change);
+    return;
+}
+
+return;
+}
+
 /*
 
 Shop::Shop(){

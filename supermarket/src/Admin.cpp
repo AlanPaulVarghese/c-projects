@@ -36,10 +36,48 @@ void Admin::add(){
 
 
 void Admin::edit(){
-
+Shop *s=s->getInstance();
 do{
     system("CLS");
-}while(false);
+    int pid;
+    cout<<"Enter Product Code:";
+    cin>>pid;
+    int index=s->getProduct(pid);
+    if(index!=-1){
+        int ch;
+        cout<<"Product Found:"<<endl;
+        cout<<"1-Edit Product Name"<<endl<<"2-Edit Product Price"<<endl<<"3-Edit Product Discount"<<endl<<"4-Go To Admin Pannel"<<endl;
+        cout<<":-";
+        cin>>ch;
+        string temp;
+        if(ch==1){
+            cout<<"Enter New Name:";
+            cin.ignore();
+            getline(cin,temp);
+        }
+        else if(ch==2){
+            cout<<"Enter New Price:";
+            cin.ignore();
+            getline(cin,temp);
+        }
+        else{
+            cout<<"Enter New Discount:";
+            cin.ignore();
+            getline(cin,temp);
+        }
+        s->editProduct(index,ch,temp);
+    }
+    else{
+        cout<<"No Product By This Code!:"<<endl;
+    }
+    string choice;
+    cout<<"Would You Like To Modify Another Product:";
+    cin>>choice;
+    transform(choice.begin(),choice.end(),choice.begin(),::tolower);
+    if(choice!="yes"){
+        return;
+    }
+}while(true);
 
 
 }
