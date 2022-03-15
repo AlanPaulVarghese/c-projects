@@ -1,7 +1,9 @@
 #ifndef ADMIN_H
 #define ADMIN_H
 #include<Authentication.h>
-
+#include<Product.h>
+#include<Shop.h>
+#include<bits/stdc++.h>
 class Admin
 {
     Authentication authentication;

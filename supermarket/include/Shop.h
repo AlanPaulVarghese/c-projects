@@ -16,14 +16,15 @@ public:
     void showMenu();
     void showAdminMenu();
     void showUserMenu();
+    void addProduct(Product p);
     //void add();
     //void edit();
     //void rem();
-    //void listItems();
+    void listItems();
     //void recipt();
      int getPCode();
     //int getProduct(int pid);
-    //int getProductSize();
+     int getProductSize();
 
 };
 

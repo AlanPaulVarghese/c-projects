@@ -24,6 +24,13 @@ if(!Shop::instance){
 return Shop::instance;
 }
 
+
+void Shop::addProduct(Product p){
+
+this->products.push_back(p);
+return;
+}
+
 void Shop::showMenu(){
      int choice;
 
@@ -65,7 +72,36 @@ void Shop::showAdminMenu(){
 Admin admin("admin","admin");
 
 if(admin.auth().verifyUser()){
-    cout<<"Welcome";
+    int choice;
+    do{
+        //gotolabel:
+        system ("CLS");
+        cout<<"\t\t\t\t\t\t\t\tWELCOME TO Admin Panel"<<endl;
+        cout<<"Enter Your Choice"<<endl;
+        cout<<"1-Add Product"<<endl<<"2-Modify Product"<<endl<<"3-Remove"<<endl<<"4-Display Products"<<endl<<"5-Back To Main Main"<<endl;
+        cout<<":-";
+        cin>>choice;
+        switch(choice){
+
+         case 1:
+                admin.add();
+                //goto gotolabel;
+                break;
+         case 4:
+                listItems();
+                cin.ignore();
+                getchar();
+                break;
+                //goto gotolabel;
+         case 5:
+                return;
+         default:
+             cout<<"Invaild Selection Please try again"<<endl;
+             cin.ignore();
+             getchar();
+             choice=-1;
+        }
+    }while(choice<5);
 }
 else{
     cout<<"no Welcomed";
@@ -91,6 +127,21 @@ cin.ignore();
 getchar();
 }
 
+int Shop::getProductSize(){
+return this->products.size();
+}
+
+void Shop::listItems(){
+int products_size=this->getProductSize();
+if(products_size==0){
+    cout<<"No Products To display!";
+    return;
+}
+ cout<<left<<setw(10)<< "Name"<<setw(5)<< "Id"<< setw(8)<< "Price"<<setw(8)<<"Discount"<< endl;
+for(int i=0;i<products_size;i++){
+    cout<<setw(10)<<products[i].pname<< setw(5)<<products[i].pcode<<setw(8)<<products[i].price<<setw(8)<<products[i].discount<< endl;
+}
+}
 
 
 int Shop::getPCode(){
