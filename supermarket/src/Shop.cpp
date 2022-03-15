@@ -6,7 +6,84 @@
 #include<fstream>
 #include<Product.h>
 #include<iomanip>//for tables;
+#include<Admin.h>
 using namespace std;
+
+
+Shop::Shop(){
+this->product_id_gen=0;
+}
+
+
+void Shop::showMenu(){
+
+    int choice;
+    cout<<"\t\t\t\t\t\t\t\tWELCOME TO MY SHOP"<<endl;
+    cout<<"Enter Your Choice"<<endl;
+    do{
+        system ("CLS");
+        cout<<"1-Admin"<<endl<<"2-Buyer"<<endl<<"3-Exit"<<endl;
+        cout<<":-";
+        cin>>choice;
+        switch(choice){
+        case 1:
+               showAdminMenu();
+               break;
+        case 2:
+               showUserMenu();
+               break;
+        case 3:
+               exit(0);
+        default:
+             cout<<"Invaild Selection Please try again"<<endl;
+             cin.ignore();
+             getchar();
+             choice=-1;
+        }
+
+    }while(choice<3);
+
+
+return;
+}
+
+
+
+
+void Shop::showAdminMenu(){
+
+Admin admin("admin","admin");
+
+if(admin.auth().verifyUser()){
+    cout<<"Welcome";
+}
+else{
+    cout<<"no Welcomed";
+}
+cin.ignore();
+getchar();
+}
+
+
+
+
+void Shop::showUserMenu(){
+
+User user("user","user");
+
+if(user.auth().verifyUser()){
+    cout<<"Welcome";
+}
+else{
+    cout<<"no Welcomed";
+}
+cin.ignore();
+getchar();
+}
+
+
+
+
 /*
 
 Shop::Shop(){

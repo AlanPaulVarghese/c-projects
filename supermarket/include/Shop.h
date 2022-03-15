@@ -11,16 +11,16 @@ int product_id_gen;
 public:
     Shop();
     void showMenu();
-    void admin();
-    void buyer();
-    void add();
-    void edit();
-    void rem();
-    void listItems();
-    void recipt();
-    int getPCode();
-    int getProduct(int pid);
-    int getProductSize();
+    void showAdminMenu();
+    void showUserMenu();
+    //void add();
+    //void edit();
+    //void rem();
+    //void listItems();
+    //void recipt();
+    //int getPCode();
+    //int getProduct(int pid);
+    //int getProductSize();
 
 };
 

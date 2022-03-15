@@ -11,7 +11,7 @@ using namespace std;
 int main()
 {
 
-    //Shop shop;
-    //shop.showMenu();
+    Shop shop;
+    shop.showMenu();
     return 0;
 }
