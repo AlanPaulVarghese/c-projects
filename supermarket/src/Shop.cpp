@@ -90,6 +90,8 @@ if(admin.auth().verifyUser()){
          case 2:
                admin.edit();
                break;
+         case 3:
+            admin.rem();
          case 4:
                 listItems();
                 cin.ignore();
@@ -183,6 +185,14 @@ if(ch==3){
 
 return;
 }
+
+void Shop::removeProduct(int index){
+
+this->products.erase(products.begin()+index);
+return;
+
+}
+
 
 /*
 

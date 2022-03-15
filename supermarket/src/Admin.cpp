@@ -81,3 +81,35 @@ do{
 
 
 }
+
+
+
+
+void Admin::rem(){
+Shop *s=s->getInstance();
+do{
+    system("CLS");
+    int pid;
+    cout<<"Enter Product Code To Remove:"<<endl;
+    cin>>pid;
+    int index=s->getProduct(pid);
+    if(index!=-1){
+      s->removeProduct(index);
+      cout<<"Product Removed!"<<endl;
+    }
+    else{
+            cout<<"No Product By This Code!:"<<endl;
+        }
+    string choice;
+    cout<<"Would You Like To Remove Another Product:";
+    cin>>choice;
+    transform(choice.begin(),choice.end(),choice.begin(),::tolower);
+    if(choice!="yes"){
+        return;
+    }
+
+}while(true);
+
+
+
+}
