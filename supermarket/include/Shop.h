@@ -8,8 +8,11 @@ class Shop{
 
 vector<Product> products;
 int product_id_gen;
+
 public:
     Shop();
+    static Shop* instance;
+    static  Shop *getInstance();
     void showMenu();
     void showAdminMenu();
     void showUserMenu();
@@ -18,7 +21,7 @@ public:
     //void rem();
     //void listItems();
     //void recipt();
-    //int getPCode();
+     int getPCode();
     //int getProduct(int pid);
     //int getProductSize();
 

@@ -1,16 +1,16 @@
 # depslib dependency file v1.0
-1647322633 source:c:\users\alan\desktop\projects\c++ projects\supermarketbilling\supermarket\main.cpp
+1647327040 source:c:\users\alan\desktop\projects\c++ projects\supermarketbilling\supermarket\main.cpp
 	<iostream>
 	<Shop.h>
 	<User.h>
 	<Authentication.h>
 
-1647322760 c:\users\alan\desktop\projects\c++ projects\supermarketbilling\supermarket\include\shop.h
+1647326961 c:\users\alan\desktop\projects\c++ projects\supermarketbilling\supermarket\include\shop.h
 	<iostream>
 	<Product.h>
 	<vector>
 
-1647322940 source:c:\users\alan\desktop\projects\c++ projects\supermarketbilling\supermarket\src\shop.cpp
+1647326959 source:c:\users\alan\desktop\projects\c++ projects\supermarketbilling\supermarket\src\shop.cpp
 	"Shop.h"
 	<iostream>
 	<User.h>
@@ -19,6 +19,7 @@
 	<fstream>
 	<Product.h>
 	<iomanip>
+	<Admin.h>
 
 1647321879 source:c:\users\alan\desktop\projects\c++ projects\supermarketbilling\supermarket\src\user.cpp
 	"User.h"

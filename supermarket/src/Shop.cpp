@@ -15,13 +15,23 @@ this->product_id_gen=0;
 }
 
 
-void Shop::showMenu(){
+Shop* Shop::getInstance(){
+if(!Shop::instance){
+    Shop::instance=new Shop;
+    return Shop::instance;
+}
 
-    int choice;
-    cout<<"\t\t\t\t\t\t\t\tWELCOME TO MY SHOP"<<endl;
-    cout<<"Enter Your Choice"<<endl;
+return Shop::instance;
+}
+
+void Shop::showMenu(){
+     int choice;
+
     do{
         system ("CLS");
+
+        cout<<"\t\t\t\t\t\t\t\tWELCOME TO MY SHOP"<<endl;
+        cout<<"Enter Your Choice"<<endl;
         cout<<"1-Admin"<<endl<<"2-Buyer"<<endl<<"3-Exit"<<endl;
         cout<<":-";
         cin>>choice;
@@ -82,6 +92,11 @@ getchar();
 }
 
 
+
+int Shop::getPCode(){
+this->product_id_gen++;
+return this->product_id_gen;
+}
 
 
 /*
